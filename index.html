@@ -84,7 +84,7 @@
 	
 	var map = L.map('map', {
 			center: [37.6, 0],
-			zoom:3,
+			zoom:1,
 			maxZoom: 12,
 			minZoom: 1,
 		});
@@ -187,7 +187,7 @@
                   var radius = calcPropRadius(props[timestamp]); // circle radius, calculation function defined below
 
                   // pop-up information (when mouseover) for each city is also defined here
-                  var popupContent = '<div ALIGN="CENTER">' +'<span style = "font-weight:bold; color:black"</span>' +props.ORIGEM + '<div ALIGN="LEFT">' + '<span style = "font-weight:bold; color: #c62121"</span>' + String(props[timestamp]) + '<span style="font-weight:normal; color:black"</span> casos confirmados</font>';
+                  var popupContent = '<div ALIGN="CENTER">' +'<span style = "font-weight:bold; color:black"</span>' +props.ORIGEM + '<div ALIGN="LEFT">' + '<span style = "font-weight:bold; color: #c62121"</span>' + String(props[timestamp]) + '<span style="font-weight:normal; color:black"</span> casos importados</font>';
 
                   layer.setRadius(radius);  // Leaflet method for setting the radius of a circle
                   layer.bindPopup(popupContent, { offset: new L.Point(0,-radius) }); // bind the popup content, with an offset
