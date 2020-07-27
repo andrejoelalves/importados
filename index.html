@@ -30,7 +30,7 @@
             position: absolute;
             bottom: 15px;
             right: 10px;
-            width: 160px;
+            width: 140px;
             margin: 5px auto;
             padding: 6px 8px;
 			line-height: 18px;
@@ -38,7 +38,30 @@
 			box-shadow: 0 0 15 px rgba(0,0,0,0.2);
             border-radius: 5px;
             z-index: 800;
+			side-panel, 
+			#temporal-legend {
+			padding: 6px 10px;
+    		font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+    		background: rgba(255,255,255,0.8);
+    		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    		border-radius: 5px;
+			
+	}
+	
+		
           }
+		  
+		  .temporal-legend {
+   		padding: 6px 10px;
+    		font: 14px/16px Arial, Helvetica, sans-serif;
+   		background: transaparent;
+    		background: rgba(255,255,255,0.8);
+    		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    		border-radius: 5px;
+			
+			}
+			
 		  #legend {
             position: relative;
             margin: 5px 0;
@@ -55,11 +78,13 @@
 				left: 0px;
 			}
 		  #legend hr.small, #legend hr.large {
-				width: 60px;
-				color: grey;
+				width: 0px;
+				color: transparent;
 				position: relative;
 				top: 0px;
 				left: -8px;
+
+				
 			}
       </style>
   </head>
@@ -69,7 +94,7 @@
 
     <section id="side-panel">
 
-        <FONT SIZE=3><b>Número de casos importados</b> <br> </font>  <FONT SIZE=1> Fonte dos dados: <a href="https://covid19.min-saude.pt/relatorio-de-situacao/" target="_blank">DGS</a> <br> <br> </font>
+        <FONT SIZE=2 style = "font-family:verdana"><b>Número de casos importados</b> <br> </font>  <FONT SIZE=1 style = "font-family:verdana"> Fonte dos dados: <a href="https://covid19.min-saude.pt/relatorio-de-situacao/" target="_blank">DGS</a> <br> <br> </font>
         <div id='legend'>
             <div id="legend-large"></div>
             <div id="legend-small"></div>
@@ -197,7 +222,7 @@
             // calculate the radius of the proportional symbols based on area
             function calcPropRadius(attributeValue) {
 			  //console.log("atributo " + attributeValue);
-              var scaleFactor = 8;   // the scale factor is used to scale the values; the units of the radius are in meters
+              var scaleFactor = 15;   // the scale factor is used to scale the values; the units of the radius are in meters
                                          // you may determine the scale factor accordingly based on the range of the values and the mapping scale
               var area = attributeValue * scaleFactor;
 
@@ -263,7 +288,7 @@
 			  
 			  //var largeDiameter = Math.sqrt(1000*5/Math.PI),
                   //smallDiameter = largeDiameter/2;
-			    var largeDiameter = Math.sqrt((max*8)/Math.PI)*2;
+			    var largeDiameter = Math.sqrt((max*15)/Math.PI)*2;
 				var smallDiameter = largeDiameter/2;
 				console.log("largeDiameter " + max);
 				console.log("smallDiameter " + min);
@@ -288,7 +313,7 @@
                   'left': smallDiameter/2
               })
 
-              $("#legend-small-label").html((max/2).toLocaleString());
+              $("#legend-small-label").html((max/2+0.5).toLocaleString());
 
               $("#legend-small-label").css({
                   'top': smallDiameter - 8,
