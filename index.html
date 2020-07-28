@@ -106,12 +106,18 @@
     </section>
 
       <script>
+	  
+		var sudoeste = L.latLng(-50, -130),
+			nordeste = L.latLng(70, 170),
+			extensao = L.latLngBounds(sudoeste, nordeste);
+	
 	
 	var map = L.map('map', {
-			center: [0, 0],
+			center: [25, 0],
 			zoom:1,
 			maxZoom: 12,
 			minZoom: 1,
+			maxBounds: extensao,
 		});
 			
     var layer = L.esri.basemapLayer('Gray').addTo(map);
