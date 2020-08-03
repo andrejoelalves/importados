@@ -19,8 +19,8 @@
 	}
 	.legendCircle {
      	border-radius:50%; 
-     	border: 1px solid #ff0000; 
-     	background: rgba(240, 0, 0, .4);
+     	border: 1px solid #c20808; 
+     	background: rgba(255, 0, 0, .4);
 	 	display: inline-block;
 	}
 	.legendValue {
