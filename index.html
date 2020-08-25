@@ -223,7 +223,7 @@ L.Control.zoomHome = L.Control.extend({
                   }
               }).addTo(map);
 
-              updatePropSymbols(timestamps[0]); // this function is defined below
+              updatePropSymbols(timestamps[166]); // this function is defined below
                                               // When loaded, the map will first show proportional symbols with the first timestamp's data
             }
 
@@ -276,7 +276,7 @@ L.Control.zoomHome = L.Control.extend({
                     'max': timestamps[166],
                     'min':timestamps[0],
                     'step': 1, // Change this to match the numeric interval between adjacent timestamps
-                    'value': String(timestamps[0])
+                    'value': String(timestamps[166])
                   })
                   .on('input change', function() {
                       updatePropSymbols($(this).val().toString()); // update the map for the timestamp
@@ -286,7 +286,7 @@ L.Control.zoomHome = L.Control.extend({
               return slider;
             }
             sliderControl.addTo(map);
-            createTimeLabel("02/03/2020"); //The starting timestamp label
+            createTimeLabel("15/08/2020"); //The starting timestamp label
           }
 
 
